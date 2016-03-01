@@ -1,25 +1,36 @@
 <template>
   <div id="app">
-    <h1>{{ msg }}</h1>
+      <h1>Counters</h1>
+      <counter v-for="counter in counters" :counter-id="$index" track-by="$index"></counter>
+      <div>
+          <button class="add-counter-button" @click="addCounter">Add Counter</button>
+      </div>
   </div>
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      // note: changing this line won't causes changes
-      // with hot-reload because the reloaded component
-      // preserves its current state and we are modifying
-      // its initial state.
-      msg: 'Hello Vue!'
-    }
-  }
-}
+    import counter from './components/Counter.vue';
+
+    export default {
+        computed: {
+            counters () {
+                return this.$store.state.counters
+            }
+        },
+        methods: {
+            addCounter () {
+                this.$store.actions.addCounter()
+            }
+        },
+        components: {
+            counter
+        }
+    };
 </script>
 
-<style>
-body {
-  font-family: Helvetica, sans-serif;
-}
+<style scoped>
+    button {
+        padding: 1rem 2rem;
+        margin: 1rem;
+    }
 </style>
