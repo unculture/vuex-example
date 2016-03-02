@@ -8,7 +8,7 @@
 </template>
 
 <script>
-    import { increment, decrement, incrementIfOdd } from '../store/actions';
+    import { increment, decrement, incrementIfOdd } from '../actions';
 
     export default {
         props: ['counterId'],

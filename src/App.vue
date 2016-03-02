@@ -10,15 +10,15 @@
 
 <script>
     import counter from './components/Counter.vue';
-    import { addCounter } from './store/actions';
+    import { addCounter } from './actions';
 
     export default {
         vuex: {
             state: {
-                counters: state => state.counters
+                counters: state => state.counters // A "Getter"
             },
             actions: {
-                addCounter
+                addCounter // ES6 object literal shorthand for addCounter: addCounter
             }
         },
         components: {
