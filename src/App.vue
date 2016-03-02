@@ -10,16 +10,15 @@
 
 <script>
     import counter from './components/Counter.vue';
+    import { addCounter } from './store/actions';
 
     export default {
-        computed: {
-            counters () {
-                return this.$store.state.counters
-            }
-        },
-        methods: {
-            addCounter () {
-                this.$store.actions.addCounter()
+        vuex: {
+            state: {
+                counters: state => state.counters
+            },
+            actions: {
+                addCounter
             }
         },
         components: {
