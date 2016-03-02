@@ -1,6 +1,11 @@
 # vuex-example
 
-> A Vue.js project
+> A Vue.js + Vuex example
+
+#Counters
+- Displays counters
+- Counters can be incremented or decremented
+- Counters can be added
 
 ## Build Setup
 
