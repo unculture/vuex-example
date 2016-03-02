@@ -9,7 +9,7 @@
 </template>
 
 <script>
-    import counter from './components/Counter.vue';
+    import counter from './Counter.vue';
     import { addCounter } from './actions';
 
     export default {
