@@ -10,14 +10,14 @@ export default new Vuex.Store({
     },
     // Mutations
     mutations: {
-        INCREMENT: (state, counterId) => {
-            state.counters.$set(counterId, state.counters[counterId] + 1)
+        INCREMENT: ({ counters }, counterId) => {
+            counters.$set(counterId, counters[counterId] + 1)
         },
-        DECREMENT: (state, counterId) => {
-            state.counters.$set(counterId, state.counters[counterId] - 1)
+        DECREMENT: ({ counters }, counterId) => {
+            counters.$set(counterId, counters[counterId] - 1)
         },
-        ADD_COUNTER: (state) => {
-            state.counters.push(0)
+        ADD_COUNTER: ({ counters }) => {
+            counters.push(0)
         }
     }
 });
